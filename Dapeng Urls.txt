@@ -1,4 +1,0 @@
-http://10.192.225.198/dapeng/information/request/request_id/
-http://10.192.225.198/dapeng/information/requestdetail/case_id/
-http://10.192.225.198/dapeng/handlecmd/requestdetail/download/21386390/?param=YmluLzEzODE3LzIxMzg2MzkwL2tzZGtfd2lyZWxlc3NfYWxlcnRfbm90aWZpY2F0aW9uX3NlcnZlcl9ibV9mcmRta3c0MXpfaWFyL2FsZXJ0X25vdGlmaWNhdGlvbl9zZXJ2ZXJfYm0ub3V0
-
