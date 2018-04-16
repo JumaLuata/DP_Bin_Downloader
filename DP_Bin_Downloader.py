@@ -7,7 +7,6 @@ import time
 from requests import Session
 from bs4 import BeautifulSoup
 
-
 class dapeng:
     def __init__(self,date):
         self.re_url = date[0]
@@ -78,17 +77,17 @@ if __name__ == '__main__':
     request_id = ''
 
     if DEBUG == 1:
-        request_url = "http://10.192.225.198/dapeng/information/request/13819"
+        request_url = "http://10.192.225.198/dapeng/information/request/13819/?buildresult=1"
         request_id = '13819'
     else:
         if len(argvs) == 2:
-            request_url = "http://10.192.225.198/dapeng/information/request/" + str(argvs[1])
+            request_url = "http://10.192.225.198/dapeng/information/request/" + str(argvs[1]) + '/?buildresult=1'
             request_id = str(argvs[1])
             #cmd_shell("The request url is "+ request_url)
             cmd_shell('Download All?(y/n):')
             sw_all = sys.stdin.read(1)
             if sw_all == 'y':
-                request_url += '/?page=all'
+                request_url += '&page=all'
         else:
             print "\n* ERROR!"
             print "\n* Please input a useful Dapeng request id."
