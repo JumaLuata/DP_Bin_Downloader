@@ -28,12 +28,13 @@ class dapeng:
         soup = BeautifulSoup(html,"lxml")
         name = ['id','test_case','compiler','target']
         for tr in soup.find('tbody', ).find_all('tr'):
-            _json[name[0]] = int(tr.find('td', id="td_list_id").get_text())
-            _json[name[1]] = str(tr.find('td',id="td_list_mcuauto_testcase").get_text())
-            _json[name[2]] = str(tr.find('td',id="td_list_mcuauto_compiler").get_text())
-            _json[name[3]] = str(tr.find('td', id="td_list_mcuauto_target").get_text())
-            _request.append(eval(str(_json).replace("\\n","").replace("\\t","")))
-            case_num += 1
+        	if str(tr.find('td', id = "td_list_needrun")=="Yes"):
+	            _json[name[0]] = int(tr.find('td', id="td_list_id").get_text())
+	            _json[name[1]] = str(tr.find('td',id="td_list_mcuauto_testcase").get_text())
+	            _json[name[2]] = str(tr.find('td',id="td_list_mcuauto_compiler").get_text())
+	            _json[name[3]] = str(tr.find('td', id="td_list_mcuauto_target").get_text())
+	            _request.append(eval(str(_json).replace("\\n","").replace("\\t","")))
+	            
         #Get the download address
         in_json = json.dumps(_request)
         req = json.loads(in_json)
